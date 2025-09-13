@@ -117,7 +117,8 @@ function App({ position, setPosition }: AppProps) {
   };
 
   const code = `
-  addToast("${message}", {
+// Creating a Toast
+addToast("${message}", {
   type: "${type}",
   variant: "${variant}",
   spacing: "${spacing}",
@@ -130,8 +131,6 @@ function App({ position, setPosition }: AppProps) {
   slideFrom: ${slideFrom},
 });
 
-// where you declare ToastProvider
-<ToastProvider position="${position}">...</ToastProvider>
 `;
 
   return (
@@ -289,10 +288,6 @@ function App({ position, setPosition }: AppProps) {
           </section>
 
           <section className="aside">
-            <div className="preview">
-              <h2>Generated Code</h2>
-              <CodeBlock code={code} />
-            </div>
             <div className="cta">
               <h2>Get Floatify</h2>
               <div className="badges">
@@ -329,6 +324,15 @@ function App({ position, setPosition }: AppProps) {
               </div>
 
               <CodeBlock code="npm install react-floatify" />
+            </div>
+            <div className="preview">
+              <h2>Generated Code</h2>
+              <CodeBlock code={code} />
+              <CodeBlock
+                code={`
+// When declaring Toast Provider
+<ToastProvider position="${position}">...</ToastProvider>`}
+              />
             </div>
           </section>
         </main>
