@@ -8,7 +8,7 @@ function App() {
   const { addToast } = useToast();
 
   // Toast config state
-  const [message, setMessage] = useState("Hello, world!");
+  const [message, setMessage] = useState("Welcome to floatify");
   const [type, setType] = useState<ToastType>("default");
   const [variant, setVariant] = useState<ToastVariant>("regular");
   const [duration, setDuration] = useState(5);
@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <div className="playground">
-        <h1>🍞 Toasty Playground</h1>
+        <h1>🍞 Floatify Playground</h1>
         <p className="subtitle">
           Use the controls OR edit the code below to preview your toast.
         </p>
@@ -115,6 +115,13 @@ function App() {
 
         <button onClick={triggerToast}>Show Toast</button>
       </div>
+      <footer>
+        &copy;{new Date().getFullYear()} react-floatify
+        <hr /> Created by{" "}
+        <a href="https://github.com/plushexe351">Ushnish Tapaswi</a>
+        <hr />
+        <a href="https://github.com/plushexe351/react-floatify">View Source</a>
+      </footer>
     </div>
   );
 }
