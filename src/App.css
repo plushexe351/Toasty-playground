@@ -6,7 +6,7 @@
   --border: #e5e7eb;
   --radius: 8px;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --code-bg: #0d1117;
+  --code-bg: #292929;
   --code-text: #f0f6fc;
 }
 
@@ -54,6 +54,14 @@ header {
 header h1 {
   margin: 0;
   font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+  }
 }
 
 .subtitle {
@@ -72,8 +80,16 @@ header h1 {
   flex: 1;
 }
 
+.aside {
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .controls,
-.preview {
+.preview,
+.cta {
   flex: 1;
   min-width: 270px;
   background: var(--bg);
@@ -83,11 +99,11 @@ header h1 {
   box-shadow: var(--shadow);
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
   gap: 1rem;
 }
 
-.preview > * {
+.preview > *,
+.cta > * {
   flex: 1;
   min-width: 100%;
 }
@@ -141,6 +157,10 @@ header h1 {
   border-radius: var(--radius);
   background: var(--accent);
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -155,10 +175,19 @@ header h1 {
 .reset-options-btn:hover {
   background-color: var(--code-bg);
 }
-
-.preview h2 {
+.controls h2,
+.preview h2,
+.cta h2 {
   margin-top: 0;
   font-size: 1.2rem;
+}
+
+.badges {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .code-block {
@@ -180,7 +209,7 @@ header h1 {
   border: none;
   border-radius: var(--radius);
   font-size: 0.75rem;
-  padding: 0.3rem 0.6rem;
+  padding: 0.2rem 0.4rem;
   cursor: pointer;
 }
 
@@ -194,4 +223,16 @@ footer {
 footer a {
   color: var(--accent);
   text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    h1 {
+      font-size: 1.3em;
+    }
+    img {
+      height: 60px;
+      width: 60px;
+    }
+  }
 }

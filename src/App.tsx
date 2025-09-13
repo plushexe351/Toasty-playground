@@ -3,6 +3,7 @@ import hljs from "highlight.js/lib/core";
 import typescript from "highlight.js/lib/languages/typescript";
 import "highlight.js/styles/github-dark.css";
 import "./App.css";
+import floatifyLogo from "./assets/floatify.png";
 
 import {
   useToast,
@@ -12,7 +13,7 @@ import {
 } from "react-floatify";
 
 import "react-floatify/dist/react-floatify.css";
-import { Copy } from "lucide-react";
+import { Copy, RotateCcwIcon } from "lucide-react";
 
 hljs.registerLanguage("typescript", typescript);
 
@@ -33,7 +34,7 @@ function CodeBlock({ code }: { code: string }) {
   return (
     <div className="code-block">
       <button className="copy-btn" onClick={copyToClipboard}>
-        <Copy size={17} />
+        <Copy size={14} />
       </button>
       <pre>
         <code dangerouslySetInnerHTML={{ __html: highlighted }} />
@@ -114,7 +115,10 @@ function App() {
   return (
     <div className="app">
       <header>
-        <h1>🍞 Floatify Playground</h1>
+        <h1>
+          <img src={floatifyLogo} alt="floatify-icon" className="logo" />
+          Floatify Playground
+        </h1>
         <p className="subtitle">
           Adjust the props and preview your toast in real-time.
         </p>
@@ -122,6 +126,7 @@ function App() {
 
       <main className="playground">
         <section className="controls">
+          <h2>Options</h2>
           <label className="message">
             Message
             <textarea
@@ -230,18 +235,58 @@ function App() {
             Show Toast
           </button>
           <button onClick={resetToDefaults} className="reset-options-btn">
-            Reset
+            <RotateCcwIcon size={17} /> Reset
           </button>
         </section>
 
-        <section className="preview">
-          <h2>Generated Code</h2>
-          <CodeBlock code={code} />
+        <section className="aside">
+          <div className="preview">
+            <h2>Generated Code</h2>
+            <CodeBlock code={code} />
+          </div>
+          <div className="cta">
+            <h2>Get Floatify</h2>
+            <div className="badges">
+              <a
+                href="https://www.npmjs.com/package/react-floatify"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://img.shields.io/npm/v/react-floatify"
+                  alt="npm version"
+                />
+              </a>
+              <a
+                href="https://opensource.org/licenses/MIT"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://img.shields.io/badge/License-MIT-green.svg"
+                  alt="License: MIT"
+                />
+              </a>
+              <a
+                href="https://github.com/plushexe351"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://img.shields.io/badge/github-plushexe351-181717?logo=github"
+                  alt="GitHub: plushexe351"
+                />
+              </a>
+            </div>
+
+            <CodeBlock code="npm install react-floatify" />
+          </div>
         </section>
       </main>
 
       <footer>
-        &copy;{new Date().getFullYear()} react-floatify ·{" "}
+        &copy;{new Date().getFullYear()} react-floatify · With ❤️ by{" "}
+        <a href="https://github.com/plushexe351">Ushnish Tapaswi</a> |{" "}
         <a href="https://github.com/plushexe351/react-floatify">View Source</a>
       </footer>
     </div>
