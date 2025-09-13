@@ -65,7 +65,7 @@ function App({ position, setPosition }: AppProps) {
     slideFrom: "right" as ToastSlideFrom,
     fontSize: 14,
     iconSize: 17,
-    elevation: 1,
+    elevation: 3,
     position: "bottom right" as Position,
   };
 
