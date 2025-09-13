@@ -1,0 +1,70 @@
+:root {
+  --toasty-color-primary: #4e4867;
+  --toasty-color-success: rgb(106, 197, 106);
+  --toasty-color-error: red;
+  --toasty-color-warning: rgb(255, 182, 25);
+  --toasty-color-contrast-text: rgb(238, 238, 238);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: sans-serif;
+  padding: 2rem;
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(252, 248, 247);
+}
+.playground {
+  max-width: 600px;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* align-items: start; */
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+input,
+select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid lightgray;
+}
+
+button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  border: 1px solid rgb(194, 194, 194);
+  background-color: var(--toasty-color-primary);
+  color: var(--toasty-color-contrast-text);
+}
