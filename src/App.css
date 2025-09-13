@@ -77,10 +77,11 @@ header h1 {
   justify-content: center;
   align-items: start;
   gap: 2rem;
-  flex: 1;
+  /* flex: 1; */
 }
 
 .aside {
+  flex: 1;
   min-width: 250px;
   display: flex;
   flex-direction: column;
@@ -90,8 +91,7 @@ header h1 {
 .controls,
 .preview,
 .cta {
-  flex: 1;
-  min-width: 270px;
+  min-width: 250px;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -101,7 +101,9 @@ header h1 {
   flex-wrap: wrap;
   gap: 1rem;
 }
-
+.controls {
+  flex: 1;
+}
 .preview > *,
 .cta > * {
   flex: 1;
@@ -223,6 +225,13 @@ footer {
 footer a {
   color: var(--accent);
   text-decoration: none;
+}
+
+@media screen and (max-width: 700px) {
+  .playground,
+  .aside {
+    gap: 1rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
