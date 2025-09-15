@@ -62,6 +62,7 @@ function App({ position, setPosition }: AppProps) {
     duration: 5,
     disableAnimation: false,
     showProgress: true,
+    showIcon: true,
     slideFrom: "right" as ToastSlideFrom,
     fontSize: 14,
     iconSize: 17,
@@ -79,6 +80,7 @@ function App({ position, setPosition }: AppProps) {
     DEFAULTS.disableAnimation
   );
   const [showProgress, setShowProgress] = useState(DEFAULTS.showProgress);
+  const [showIcon, setShowIcon] = useState(DEFAULTS.showIcon);
   const [slideFrom, setSlideFrom] = useState<ToastSlideFrom>(
     DEFAULTS.slideFrom
   );
@@ -94,6 +96,7 @@ function App({ position, setPosition }: AppProps) {
     setDuration(DEFAULTS.duration);
     setDisableAnimation(DEFAULTS.disableAnimation);
     setShowProgress(DEFAULTS.showProgress);
+    setShowIcon(DEFAULTS.showIcon);
     setSlideFrom(DEFAULTS.slideFrom);
     setFontSize(DEFAULTS.fontSize);
     setIconSize(DEFAULTS.iconSize);
@@ -109,6 +112,7 @@ function App({ position, setPosition }: AppProps) {
       spacing,
       disableAnimation,
       showProgress,
+      showIcon,
       slideFrom,
       fontSize,
       iconSize,
@@ -128,9 +132,9 @@ addToast("${message}", {
   elevation: ${elevation},
   disableAnimation: ${disableAnimation},
   showProgress: ${showProgress},
+  showIcon: ${showIcon},
   slideFrom: ${slideFrom},
 });
-
 `;
 
   return (
@@ -263,19 +267,26 @@ addToast("${message}", {
               <label className="checkbox">
                 <input
                   type="checkbox"
-                  checked={disableAnimation}
-                  onChange={(e) => setDisableAnimation(e.target.checked)}
-                />
-                Disable animation
-              </label>
-
-              <label className="checkbox">
-                <input
-                  type="checkbox"
                   checked={showProgress}
                   onChange={(e) => setShowProgress(e.target.checked)}
                 />
                 Show Progress
+              </label>
+              <label className="checkbox">
+                <input
+                  type="checkbox"
+                  checked={showIcon}
+                  onChange={(e) => setShowIcon(e.target.checked)}
+                />
+                Show Icon
+              </label>
+              <label className="checkbox">
+                <input
+                  type="checkbox"
+                  checked={disableAnimation}
+                  onChange={(e) => setDisableAnimation(e.target.checked)}
+                />
+                Disable animation
               </label>
             </div>
 

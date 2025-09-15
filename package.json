@@ -18,7 +18,7 @@
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-floatify": "^1.1.2",
+    "react-floatify": "^1.1.4",
     "sass": "^1.92.1"
   },
   "devDependencies": {

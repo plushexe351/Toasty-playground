@@ -138,6 +138,12 @@ header h1 {
   display: flex;
   justify-content: start;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  > label {
+    flex: unset;
+    flex-direction: row;
+  }
 }
 .controls input[type="checkbox"] {
   width: auto;
